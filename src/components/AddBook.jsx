@@ -3,13 +3,13 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import axios from 'axios';
 
-const Pringleform = () => {
+const AddBook = () => {
 
     // const [count, setCount] = useState(0);
     const [form, setForm] = useState({
       id: '',
-      pringleFlavour: '',
-      productPrice: 0
+      bookname: '',
+      bookprice: 0
     });
 
     function valueAdd() {
@@ -18,30 +18,25 @@ const Pringleform = () => {
       });
     }
 
-    // function add() {
-    //     setCount(count+1)
-    // }
-
   return (
     <div>
         <div><br></br></div>
-        <div><TextField id="outlined-basic" label="Product ID" name='id' variant="outlined" onChange={(event) => {
+        <div><TextField id="outlined-basic" label="Book ID" name='id' variant="outlined" onChange={(event) => {
           setForm({...form, id: event.target.value})
         }} /></div>
         <div><br></br></div>
-        <div><TextField id="outlined-basic" label="Pringle Flavour" name='pringleFlavour' variant="outlined" onChange={(event) => {
-          setForm({...form, pringleFlavour: event.target.value})
+        <div><TextField id="outlined-basic" label="Book Name" name='bookname' variant="outlined" onChange={(event) => {
+          setForm({...form, bookname: event.target.value})
         }}/></div>    
         <div><br></br></div>
-        <div><TextField id="outlined-basic" label="Product Price" name='productPrice' variant="outlined" onChange={(event) => {
-          setForm({...form, productPrice: event.target.value})
+        <div><TextField id="outlined-basic" label="Book Price" name='bookprice' variant="outlined" onChange={(event) => {
+          setForm({...form, bookprice: event.target.value})
         }}/></div>
         <div><br></br></div>
         <Button variant="contained" onClick={valueAdd} style={{backgroundColor:"black"}}>ADD</Button>
         <div><br></br></div>
-        {/* <small>The button is clicked {count}</small> */}
     </div>
   )
 }
 
-export default Pringleform
+export default AddBook

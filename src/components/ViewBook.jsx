@@ -9,14 +9,9 @@ import Paper from '@mui/material/Paper';
 import { Button } from '@mui/material';
 import axios from 'axios';
 
-const Pringle = () => {
+const ViewBook = () => {
 
     const [rows, setRows] = useState([]);
-
-    //  ♡\(◡‿◡)/♡
-    //       ♡
-    //       |
-    //      / \
 
     useEffect(() => {
         axios.get('http://localhost:3000/products').then((res) => {
@@ -47,8 +42,8 @@ const Pringle = () => {
                     {rows.map((row) => (
                         <TableRow key={row.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }} >
                             <TableCell component="th" scope="row"> {row.id} </TableCell>
-                            <TableCell align="right">{row.pringleFlavour}</TableCell>
-                            <TableCell align="right">{row.productPrice}</TableCell>
+                            <TableCell align="right">{row.bookname}</TableCell>
+                            <TableCell align="right">{row.bookprice}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
@@ -58,4 +53,4 @@ const Pringle = () => {
   )
 }
 
-export default Pringle
+export default ViewBook
